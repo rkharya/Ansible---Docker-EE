@@ -54,7 +54,7 @@ Ansible play-book tree structure -
 
           16 directories, 19 files   
 
-Swarm/UCP cluster and DTR installations need to be done separately as of now. In near future we will add these 2 tasks as well into existing playbook. 
+Swarm/UCP cluster formation and DTR installations need to be done separately after running this playbook as of now. In near future we will add these 2 tasks as well into existing playbook. 
 
 To run the playbook, one need to download entire directory structure on a build node and run following command -
 
