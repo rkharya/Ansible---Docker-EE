@@ -1,0 +1,5 @@
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+#export http_proxy=http://<your proxy-host:port/>
+#export https_proxy=http://<your proxy-host:port/>
+#export no_proxy=localhost,127.0.0.0/8,<your cluster node ips>
