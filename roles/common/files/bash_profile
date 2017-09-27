@@ -1,0 +1,14 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+#export http_proxy=http://<your proxy-host:port/>
+#export https_proxy=http://<your proxy-host:port/>
+#export no_proxy=localhost,127.0.0.0/8,<your cluster node ips>
+export PATH
