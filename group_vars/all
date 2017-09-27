@@ -1,0 +1,6 @@
+### Global variables ###
+dee_url: "https://storebits.docker.com/ee/linux/sub-3a55d8be-ded8-497f-97ca-ee3289a7cdcd/rhel"
+ntp_server: ""
+rhsm_user: ""
+rhsm_password: ""
+pool_id: ""
