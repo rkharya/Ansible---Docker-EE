@@ -1,6 +1,6 @@
 # Ansible-Docker-EE
 Ansible code for deploying Docker Enterprise Edition
-This repo contains Ansible play-book code for deploying Docker Enterprise Edition v17.06 on UCS bare metal nodes. Following pre-requisites are needed before the play-book can be played on -
+This repo contains Ansible play-book code for deploying Docker Enterprise Edition v17.06 on UCS bare metal nodes. Following pre-requisites/important notes, are needed before the play-book can be played on -
 
   1. UCS Manager Service Profile configuration is out of scope of this playbook. It is expected that Day0/1 tasks for setting up UCS servers, storage configuration, network configuration have already been taken up. 
   2. Bare Metal OS with RHEL7.3 has been taken care of beforehand.
@@ -9,6 +9,7 @@ This repo contains Ansible play-book code for deploying Docker Enterprise Editio
   5. It expects some of the environement variable to be setup as global-vars, details are captured in respective sections.
   6. This playbook is written for environment which works behind proxy, if not needed certain sub-tasks should be skipped.
   7. Same is the case with certain environemental files like /etc/hosts, Cisco VIC enic driver RPM etc to be present in files sections of certain roles.
+  8. Play-book does all POST OS installation tasks including storage configurations and Docker EE installs. 
   
   
 Ansible play-book tree structure -
@@ -52,3 +53,11 @@ Ansible play-book tree structure -
                       └── main.yml
 
           16 directories, 19 files   
+
+Swarm/UCP cluster and DTR installations need to be done separately as of now. In near future we will add these 2 tasks as well into existing playbook. 
+
+To run the playbook, one need to download entire directory structure on a build node and run following command -
+
+`ansible-playbook -verbose -i /etc/ansible/DEE-Nodes DEE-Nodes.yml -u root` 
+
+after editing DEE-Nodes file with cluster nodes details, putting values inside group_vars/all file.
