@@ -9,55 +9,56 @@ This repo contains Ansible play-book code for deploying Docker Enterprise Editio
   5. It expects some of the environement variable to be setup as global-vars, details are captured in respective sections.
   6. Same is the case with certain environemental files like /etc/hosts, Cisco VIC enic driver RPM etc to be present in files sections of certain roles.
 Ansible play-book tree structure -
-[root@NFS ansible]# pwd
-/etc/ansible
-[root@NFS ansible]# tree
-.
-├── ansible.cfg
-├── DEE-C-Nodes
-├── DEE-C-Nodes.retry
-├── DEE-C-Nodes.yml
-├── DEE-Nodes
-├── DEE-Nodes.retry
-├── DEE-Nodes.yml
-├── group_vars
-│   └── all
-├── hosts
-├── M5-DEE-Nodes
-├── MTA-Nodes
-├── MTA-Nodes.retry
-├── MTA-Nodes.yml
-├── roles
-│   ├── common
-│   │   ├── files
-│   │   │   ├── bash_profile
-│   │   │   ├── environment
-│   │   │   ├── hosts
-│   │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
-│   │   │   ├── ntp.conf
-│   │   │   └── rhsm.conf
-│   │   └── tasks
-│   │       └── main.yml
-│   ├── dee-url.txt
-│   ├── docker
-│   │   ├── files
-│   │   │   ├── daemon.json
-│   │   │   └── http-proxy.conf
-│   │   └── tasks
-│   │       └── main.yml
-│   ├── firewall
-│   │   └── tasks
-│   │       └── main.yml
-│   ├── ntp
-│   │   └── tasks
-│   │       └── main.yml
-│   ├── pool-id.txt
-│   ├── storage
-│   │   └── tasks
-│   │       └── main.yml
-│   └── yum
-│       └── tasks
-│           └── main.yml
-├── UCP-Node
-├── UCP-Node.retry
-└── UCP-Node.yml
+
+              [root@NFS ansible]# pwd
+              /etc/ansible
+              [root@NFS ansible]# tree
+              .
+              ├── ansible.cfg
+              ├── DEE-C-Nodes
+              ├── DEE-C-Nodes.retry
+              ├── DEE-C-Nodes.yml
+              ├── DEE-Nodes
+              ├── DEE-Nodes.retry
+              ├── DEE-Nodes.yml
+              ├── group_vars
+              │   └── all
+              ├── hosts
+              ├── M5-DEE-Nodes
+              ├── MTA-Nodes
+              ├── MTA-Nodes.retry
+              ├── MTA-Nodes.yml
+              ├── roles
+              │   ├── common
+              │   │   ├── files
+              │   │   │   ├── bash_profile
+              │   │   │   ├── environment
+              │   │   │   ├── hosts
+              │   │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
+              │   │   │   ├── ntp.conf
+              │   │   │   └── rhsm.conf
+              │   │   └── tasks
+              │   │       └── main.yml
+              │   ├── dee-url.txt
+              │   ├── docker
+              │   │   ├── files
+              │   │   │   ├── daemon.json
+              │   │   │   └── http-proxy.conf
+              │   │   └── tasks
+              │   │       └── main.yml
+              │   ├── firewall
+              │   │   └── tasks
+              │   │       └── main.yml
+              │   ├── ntp
+              │   │   └── tasks
+              │   │       └── main.yml
+              │   ├── pool-id.txt
+              │   ├── storage
+              │   │   └── tasks
+              │   │       └── main.yml
+              │   └── yum
+              │       └── tasks
+              │           └── main.yml
+              ├── UCP-Node
+              ├── UCP-Node.retry
+              └── UCP-Node.yml
