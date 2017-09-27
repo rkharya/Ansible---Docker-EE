@@ -12,7 +12,7 @@ This repo contains Ansible play-book code for deploying Docker Enterprise Editio
   8. Play-book does all POST OS installation tasks including storage configurations and Docker EE installs. 
   
   
-Ansible play-book tree structure -
+. Ansible play-book tree structure -
 
           [root@NFS ansible]# tree
           .
@@ -54,10 +54,8 @@ Ansible play-book tree structure -
 
           16 directories, 19 files   
 
-Swarm/UCP cluster formation and DTR installations need to be done separately after running this playbook as of now. In near future we will add these 2 tasks as well into existing playbook. 
+. Swarm/UCP cluster formation and DTR installations need to be done separately after running this playbook as of now. In near future we will add these 2 tasks as well into existing playbook. 
 
-To run the playbook, one need to download entire directory structure on a build node and run following command -
+. To run the playbook, one need to download entire directory structure on a build node and run following command, after editing DEE-Nodes file with cluster nodes details, putting values inside group_vars/all file -
 
-`ansible-playbook -verbose -i /etc/ansible/DEE-Nodes DEE-Nodes.yml -u root` 
-
-after editing DEE-Nodes file with cluster nodes details, putting values inside group_vars/all file.
+  `ansible-playbook -verbose -i /etc/ansible/DEE-Nodes DEE-Nodes.yml -u root` 
