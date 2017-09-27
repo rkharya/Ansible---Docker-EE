@@ -1,0 +1,9 @@
+- hosts: DEE-Nodes
+  gather_facts: no
+  roles:
+   - common
+   - yum
+   - ntp
+   - firewall
+   - storage
+   - docker
