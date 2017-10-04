@@ -41,5 +41,17 @@
 # leading 0s:
 
 ## db-[99:101]-node.example.com
-#[DEE-Nodes]
-#target-host-names
+[DEE-Nodes]
+< DEE cluster nodes >
+[UCP-Mgr]
+< Fisrt UCP manager node >
+[UCP-Mgr-Replicas]
+< UCP manager replicas >
+[UCP-Wrk]
+< UCP Worker Nodes >
+[UCP-DTR]
+< First DTR node >
+[UCP-DTR-R1]
+< DTR replica node one >
+[UCP-DTR-R2]
+< DTR replica node two >
