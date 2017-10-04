@@ -1,17 +1,17 @@
 - name: Registering System to RHSM
-  shell:
+  shell: 
     subscription-manager register --username={{rhsm_user}} --password={{rhsm_password}}
-- name: Refresh Subscription Manager DB
+- name: Refresh Subscription Manager DB 
   shell:
     subscription-manager refresh
-- name: Subscribing to Pool
+- name: Subscribing to Pool  
   shell:
     subscription-manager attach --pool={{pool_id}}
 - name: Setting RHEL release version
   shell:
     subscription-manager release --set=7.3
 - name: Enabling Repos
-  shell:
+  shell:  
     subscription-manager repos --enable=rhel-7-server-rpms
 - name: install enic rpm from a local file
   yum:
@@ -44,6 +44,6 @@
     host: "{{ inventory_hostname }}"
     port: 22
     state: started
-    delay: 120
-    timeout: 180
+    delay: 360
+    timeout: 480
   when: reboot_hint.stdout.find("reboot") != -1
