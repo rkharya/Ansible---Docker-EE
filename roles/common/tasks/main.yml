@@ -1,16 +1,16 @@
 - name: Copying /etc/hosts
-  copy:
+  copy: 
     src=hosts dest=/etc/hosts
 - name: Copying environment
   copy:
     src=environment dest=/etc/environment
-- name: Copying rhsm conf
+- name: Copying rhsm conf   
   copy:
     src=rhsm.conf dest=/etc/rhsm/rhsm.conf
 - name: Copying NTP conf
-  copy:
+  copy:  
     src=ntp.conf dest=/etc/ntp.conf
-- name: Copying bash profile
+- name: Copying bash profile   
   copy:
     src=bash_profile dest=/root/.bash_profile
 - name: Copying enic driver
