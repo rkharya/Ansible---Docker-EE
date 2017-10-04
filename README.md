@@ -10,49 +10,69 @@ This repo contains Ansible play-book code for deploying Docker Enterprise Editio
   6. This playbook is written for environment which works behind proxy, if not needed certain sub-tasks should be skipped.
   7. Same is the case with certain environemental files like /etc/hosts, Cisco VIC enic driver RPM etc to be present in files sections of certain roles.
   8. Play-book does all POST OS installation tasks including storage configurations and Docker EE installs. 
+  9. Play-book is written with UCS-Manager version 3.2(1d) and corresponding Cisco VIC - enic driver for RHEL7.3.
   
   
 . Ansible play-book tree structure -
 
-          [root@NFS ansible]# tree
           .
-          ├── ansible.cfg
-          ├── DEE-Nodes
-          ├── DEE-Nodes.yml
-          ├── group_vars
-          │   └── all
-          ├── hosts
-          └── roles
-              ├── common
-              │   ├── files
-              │   │   ├── bash_profile
-              │   │   ├── environment
-              │   │   ├── hosts
-              │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
-              │   │   ├── ntp.conf
-              │   │   └── rhsm.conf
-              │   └── tasks
-              │       └── main.yml
-              ├── docker
-              │   ├── files
-              │   │   ├── daemon.json
-              │   │   └── http-proxy.conf
-              │   └── tasks
-              │       └── main.yml
-              ├── firewall
-              │   └── tasks
-              │       └── main.yml
-              ├── ntp
-              │   └── tasks
-              │       └── main.yml
-              ├── storage
-              │   └── tasks
-              │       └── main.yml
-              └── yum
-                  └── tasks
-                      └── main.yml
+├── DEE-Nodes
+├── DEE-Nodes.yml
+├── group_vars
+│   └── all
+└── roles
+    ├── common
+    │   ├── files
+    │   │   ├── bash_profile
+    │   │   ├── environment
+    │   │   ├── hosts
+    │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
+    │   │   ├── ntp.conf
+    │   │   └── rhsm.conf
+    │   └── tasks
+    │       └── main.yml
+    ├── docker
+    │   ├── files
+    │   │   ├── daemon.json
+    │   │   └── http-proxy.conf
+    │   └── tasks
+    │       └── main.yml
+    ├── firewall
+    │   └── tasks
+    │       └── main.yml
+    ├── ntp
+    │   └── tasks
+    │       └── main.yml
+    ├── storage
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPdtr
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPdtr-r1
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPdtr-r2
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPreplica
+    │   ├── files
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPswarm
+    │   ├── files
+    │   │   └── docker_subscription.lic
+    │   └── tasks
+    │       └── main.yml
+    ├── UCPworker
+    │   ├── files
+    │   └── tasks
+    │       └── main.yml
+    └── yum
+        └── tasks
+            └── main.yml
 
-          16 directories, 19 files   
+31 directories, 24 files
 
 . Swarm/UCP cluster formation and DTR installations need to be done separately after running this playbook as of now. In near future we will add these 2 tasks as well into existing playbook. 
 
