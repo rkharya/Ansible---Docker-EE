@@ -16,63 +16,63 @@ This repo contains Ansible play-book code for deploying Docker Enterprise Editio
 . Ansible play-book tree structure -
 
           .
-├── DEE-Nodes
-├── DEE-Nodes.yml
-├── group_vars
-│   └── all
-└── roles
-    ├── common
-    │   ├── files
-    │   │   ├── bash_profile
-    │   │   ├── environment
-    │   │   ├── hosts
-    │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
-    │   │   ├── ntp.conf
-    │   │   └── rhsm.conf
-    │   └── tasks
-    │       └── main.yml
-    ├── docker
-    │   ├── files
-    │   │   ├── daemon.json
-    │   │   └── http-proxy.conf
-    │   └── tasks
-    │       └── main.yml
-    ├── firewall
-    │   └── tasks
-    │       └── main.yml
-    ├── ntp
-    │   └── tasks
-    │       └── main.yml
-    ├── storage
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPdtr
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPdtr-r1
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPdtr-r2
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPreplica
-    │   ├── files
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPswarm
-    │   ├── files
-    │   │   └── docker_subscription.lic
-    │   └── tasks
-    │       └── main.yml
-    ├── UCPworker
-    │   ├── files
-    │   └── tasks
-    │       └── main.yml
-    └── yum
-        └── tasks
-            └── main.yml
+          ├── DEE-Nodes
+          ├── DEE-Nodes.yml
+          ├── group_vars
+          │   └── all
+          └── roles
+              ├── common
+              │   ├── files
+              │   │   ├── bash_profile
+              │   │   ├── environment
+              │   │   ├── hosts
+              │   │   ├── kmod-enic-2.3.0.39-rhel7u3.el7.x86_64.rpm
+              │   │   ├── ntp.conf
+              │   │   └── rhsm.conf
+              │   └── tasks
+              │       └── main.yml
+              ├── docker
+              │   ├── files
+              │   │   ├── daemon.json
+              │   │   └── http-proxy.conf
+              │   └── tasks
+              │       └── main.yml
+              ├── firewall
+              │   └── tasks
+              │       └── main.yml
+              ├── ntp
+              │   └── tasks
+              │       └── main.yml
+              ├── storage
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPdtr
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPdtr-r1
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPdtr-r2
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPreplica
+              │   ├── files
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPswarm
+              │   ├── files
+              │   │   └── docker_subscription.lic
+              │   └── tasks
+              │       └── main.yml
+              ├── UCPworker
+              │   ├── files
+              │   └── tasks
+              │       └── main.yml
+              └── yum
+                  └── tasks
+                      └── main.yml
 
-31 directories, 24 files
+          31 directories, 24 files
 
 . Swarm/UCP cluster formation and DTR installations need to be done separately after running this playbook as of now. In near future we will add these 2 tasks as well into existing playbook. 
 
